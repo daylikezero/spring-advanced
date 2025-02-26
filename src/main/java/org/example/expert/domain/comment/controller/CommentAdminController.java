@@ -1,7 +1,7 @@
 package org.example.expert.domain.comment.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.expert.domain.auth.annotation.AuthLogging;
+import org.example.expert.global.config.logging.annotation.AuthLogging;
 import org.example.expert.domain.comment.service.CommentAdminService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
