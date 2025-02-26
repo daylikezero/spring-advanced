@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ManagerSaveRequest {
 
-    @NotNull
+    @NotNull(message = "담당자 ID는 필수값입니다.")
     private Long managerUserId; // 일정 작상자가 배치하는 유저 id
 }

@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserChangePasswordRequest {
 
-    @NotBlank
+    @NotBlank(message = "기존 비밀번호는 필수값입니다.")
     private String oldPassword;
-    @NotBlank
+    @NotBlank(message = "새 비밀번호는 필수값입니다.")
     @Pattern(regexp = "^(?=.\\d)(?=.*[A-Z]).{8,}",
             message = "새 비밀번호는 8자 이상이어야 하고, 숫자와 대문자를 포함해야 합니다.")
     private String newPassword;
