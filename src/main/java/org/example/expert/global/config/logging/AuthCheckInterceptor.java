@@ -1,13 +1,15 @@
-package org.example.expert.config.logging;
+package org.example.expert.global.config.logging;
 
 import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.expert.config.JwtUtil;
+import org.example.expert.global.auth.JwtUtil;
 import org.example.expert.domain.auth.exception.AuthException;
 import org.example.expert.domain.user.enums.UserRole;
+import org.example.expert.global.config.logging.request.CustomHttpRequestWrapper;
+import org.example.expert.global.config.logging.response.CustomHttpResponseWrapper;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;

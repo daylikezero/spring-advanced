@@ -1,7 +1,8 @@
-package org.example.expert.config;
+package org.example.expert.global.config;
 
 import lombok.RequiredArgsConstructor;
-import org.example.expert.config.logging.AuthCheckInterceptor;
+import org.example.expert.global.auth.AuthUserArgumentResolver;
+import org.example.expert.global.config.logging.AuthCheckInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
