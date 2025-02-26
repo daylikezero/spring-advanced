@@ -1,4 +1,4 @@
-package org.example.expert.domain.auth.annotation;
+package org.example.expert.global.config.logging.annotation;
 
 import java.lang.annotation.*;
 

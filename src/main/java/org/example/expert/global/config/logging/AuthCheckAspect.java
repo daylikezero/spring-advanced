@@ -39,7 +39,7 @@ public class AuthCheckAspect {
     private final JwtUtil jwtUtil;
     private final ObjectMapper objectMapper;
 
-    @Pointcut("@annotation(org.example.expert.domain.auth.annotation.AuthLogging)")
+    @Pointcut("@annotation(org.example.expert.global.config.logging.annotation.AuthLogging)")
     public void loggingPoint() {
 
     }
