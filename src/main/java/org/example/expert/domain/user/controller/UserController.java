@@ -16,6 +16,8 @@ public class UserController {
 
     private final UserService userService;
 
+
+
     @GetMapping("/users/{userId}")
     public ResponseEntity<UserResponse> getUser(@PathVariable long userId) {
         return ResponseEntity.ok(userService.getUser(userId));
@@ -24,5 +26,10 @@ public class UserController {
     @PutMapping("/users")
     public void changePassword(@Auth AuthUser authUser, @Valid @RequestBody UserChangePasswordRequest userChangePasswordRequest) {
         userService.changePassword(authUser.getId(), userChangePasswordRequest);
+    }
+
+    @DeleteMapping("/users")
+    public void deleteUser(@Auth AuthUser authUser) {
+        userService.deleteUser(authUser.getId());
     }
 }
