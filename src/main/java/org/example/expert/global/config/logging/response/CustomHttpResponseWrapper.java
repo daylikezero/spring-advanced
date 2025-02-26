@@ -1,4 +1,4 @@
-package org.example.expert.config.logging;
+package org.example.expert.global.config.logging.response;
 
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.WriteListener;

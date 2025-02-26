@@ -1,8 +1,7 @@
-package org.example.expert.config.logging.filter;
+package org.example.expert.global.config.logging.request;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
-import org.example.expert.config.logging.CustomHttpRequestWrapper;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;

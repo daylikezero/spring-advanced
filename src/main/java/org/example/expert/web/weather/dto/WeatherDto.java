@@ -1,4 +1,4 @@
-package org.example.expert.client.dto;
+package org.example.expert.web.weather.dto;
 
 import lombok.Getter;
 

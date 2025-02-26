@@ -1,4 +1,4 @@
-package org.example.expert.config.logging;
+package org.example.expert.global.config.logging;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +11,8 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.example.expert.config.JwtUtil;
+import org.example.expert.global.auth.JwtUtil;
+import org.example.expert.global.config.logging.request.CustomHttpRequestWrapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
