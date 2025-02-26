@@ -1,4 +1,4 @@
-package org.example.expert.global.config.logging;
+package org.example.expert.global.common.logging;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,7 +12,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.example.expert.global.auth.JwtUtil;
-import org.example.expert.global.config.logging.request.CustomHttpRequestWrapper;
+import org.example.expert.global.common.logging.request.CustomHttpRequestWrapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -39,7 +39,7 @@ public class AuthCheckAspect {
     private final JwtUtil jwtUtil;
     private final ObjectMapper objectMapper;
 
-    @Pointcut("@annotation(org.example.expert.global.config.logging.annotation.AuthLogging)")
+    @Pointcut("@annotation(org.example.expert.global.common.logging.annotation.AuthLogging)")
     public void loggingPoint() {
 
     }

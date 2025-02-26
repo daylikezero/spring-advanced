@@ -1,4 +1,4 @@
-package org.example.expert.global.config.logging.annotation;
+package org.example.expert.global.common.logging.annotation;
 
 import java.lang.annotation.*;
 
