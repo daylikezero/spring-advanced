@@ -40,4 +40,13 @@ public class UserService {
 
         user.changePassword(passwordEncoder.encode(userChangePasswordRequest.getNewPassword()));
     }
+
+    @Transactional
+    public void deleteUser(long userId) {
+        if(!userRepository.existsById(userId)) {
+            throw new InvalidRequestException("User not found");
+        }
+
+        userRepository.deleteById(userId);
+    }
 }
