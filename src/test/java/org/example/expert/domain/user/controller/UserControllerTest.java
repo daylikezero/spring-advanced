@@ -12,9 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.context.request.NativeWebRequest;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.willDoNothing;
 import static org.mockito.Mockito.times;
@@ -73,7 +71,7 @@ public class UserControllerTest {
         // when
         mockMvc.perform(put("/users", authUser, userChangePasswordRequest)
                         .header("Authorization", "Bearer mock-token"))
-                        .andExpect(status().isOk());
+                .andExpect(status().isOk());
         // then
         verify(userService, times(1)).changePassword(userId, userChangePasswordRequest);
     }
