@@ -14,8 +14,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class WebConfig implements WebMvcConfigurer {
 
-    private final AuthCheckInterceptor authCheckInterceptor;
-
     // ArgumentResolver 등록
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
@@ -25,6 +23,7 @@ public class WebConfig implements WebMvcConfigurer {
     // AuthCheckInterceptor 등록
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authCheckInterceptor).addPathPatterns("/admin/**");
+        registry.addInterceptor(new AuthCheckInterceptor())
+                .addPathPatterns("/admin/**");
     }
 }

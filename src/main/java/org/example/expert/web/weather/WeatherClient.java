@@ -2,6 +2,7 @@ package org.example.expert.web.weather;
 
 import org.example.expert.web.weather.dto.WeatherDto;
 import org.example.expert.domain.common.exception.ServerException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,9 @@ public class WeatherClient {
     public WeatherClient(RestTemplateBuilder builder) {
         this.restTemplate = builder.build();
     }
+
+    @Value("${weather.api.url}")
+    private String weatherApiUrl;
 
     public String getTodayWeather() {
         ResponseEntity<WeatherDto[]> responseEntity =
@@ -48,8 +52,7 @@ public class WeatherClient {
 
     private URI buildWeatherApiUri() {
         return UriComponentsBuilder
-                .fromUriString("https://f-api.github.io")
-                .path("/f-api/weather.json")
+                .fromUriString(weatherApiUrl)
                 .encode()
                 .build()
                 .toUri();

@@ -1,5 +1,6 @@
 package org.example.expert.global.common;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.expert.domain.auth.exception.AuthException;
 import org.example.expert.domain.common.exception.InvalidRequestException;
 import org.example.expert.domain.common.exception.ServerException;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -38,6 +40,13 @@ public class GlobalExceptionHandler {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         String defaultMessage = ex.getBindingResult().getAllErrors().get(0).getDefaultMessage();
         return getErrorResponse(status, defaultMessage);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, Object>> handleException(Exception ex) {
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        log.error("", ex);
+        return getErrorResponse(status, "internal server error");
     }
 
     public ResponseEntity<Map<String, Object>> getErrorResponse(HttpStatus status, String message) {

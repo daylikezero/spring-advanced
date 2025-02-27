@@ -29,24 +29,17 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class AuthCheckInterceptor implements HandlerInterceptor {
 
-    private static final String AUTHORIZATION_HEADER = "Authorization";
-
-    private final JwtUtil jwtUtil;
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String token = request.getHeader(AUTHORIZATION_HEADER);
-        long userId = Long.parseLong(jwtUtil.extractClaims(token.substring(7)).getSubject());
-
         // 4-1-2. 어드민 권한 여부를 확인하여 인증되지 않은 사용자의 접근을 차단
         // JwtFilter 에서 검증
-        String userRole = (String) jwtUtil.extractClaims(token.substring(7)).get("userRole");
-        if (!UserRole.ADMIN.name().equals(userRole)) {
+        UserRole userRole = UserRole.of((String) request.getAttribute("userRole"));
+        if (!UserRole.ADMIN.equals(userRole)) {
             throw new AuthException("요청 권한이 없습니다. 현재 권한: " + userRole);
         }
 
         // 4-1-3. 인증 성공 시, 요청 시각과 URL을 로깅
-        log.info("[Interceptor] 요청한 사용자의 ID: {}", userId);
+        log.info("[Interceptor] 요청한 사용자의 ID: {}", request.getAttribute("userId"));
         log.info("[Interceptor] API 요청 시각: {}", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         log.info("[Interceptor] API 요청 URL: {}", URLDecoder.decode(request.getRequestURI(), "UTF-8"));
         loggingRequestBody(request);
