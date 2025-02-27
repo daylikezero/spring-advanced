@@ -231,4 +231,4 @@ java
 ## 🔫 트러블 슈팅
 [TIL_Spring_심화_트러블슈팅](https://velog.io/@daylikezero/TIL-Spring-%EC%8B%AC%ED%99%94-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85)<br>
 [[과제]_패키지_구조_변경하기](https://velog.io/@daylikezero/%EA%B3%BC%EC%A0%9C-%ED%8C%A8%ED%82%A4%EC%A7%80-%EA%B5%AC%EC%A1%B0-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0)<br>
-[[과제]_에러_메세지_개선](https://velog.io/@daylikezero/%EA%B3%BC%EC%A0%9C-%EC%9D%91%EB%8B%B5-%EB%A9%94%EC%84%B8%EC%A7%80-%EA%B0%9C%EC%84%A0)<br>
+[[과제]_에러_메세지_개선](https://velog.io/@daylikezero/%EA%B3%BC%EC%A0%9C-%EC%97%90%EB%9F%AC-%EB%A9%94%EC%84%B8%EC%A7%80-%EA%B0%9C%EC%84%A0)<br>
